@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       - 443:443
-      - 8080:8080
+      - 38080:38080
       - 80:80
       - 8084:8084
     volumes:

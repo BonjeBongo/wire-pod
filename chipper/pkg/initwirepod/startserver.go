@@ -103,12 +103,12 @@ func StartFromProgramInit(sttInitFunc func() error, sttHandlerFunc interface{}, 
 	}
 	err := BeginWirepodSpecific(sttInitFunc, sttHandlerFunc, voiceProcessorName)
 	if err != nil {
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 38080 to set up wire-pod.\033[0m")
 	} else if !vars.APIConfig.PastInitialSetup {
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 38080 to set up wire-pod.\033[0m")
 	} else if (vars.APIConfig.STT.Service == "vosk" || vars.APIConfig.STT.Service == "whisper.cpp") && vars.APIConfig.STT.Language == "" {
 		logger.Println("\033[33m\033[1mLanguage value is blank, but STT service is " + vars.APIConfig.STT.Service + ". Reinitiating setup process.\033[0m")
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 38080 to set up wire-pod.\033[0m")
 		vars.APIConfig.PastInitialSetup = false
 	} else {
 		go StartChipper()
