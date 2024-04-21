@@ -50,7 +50,7 @@ var (
 	Certs            = "../certs"
 )
 
-var WebPort string = "38080"
+var WebPort string = "8080"
 
 // /home/name/.anki_vector/
 var SDKIniPath string
@@ -179,11 +179,11 @@ func Init() {
 		if _, err := strconv.Atoi(os.Getenv("WEBSERVER_PORT")); err == nil {
 			WebPort = os.Getenv("WEBSERVER_PORT")
 		} else {
-			logger.Println("WEBSERVER_PORT contains letters, using default of 38080")
-			WebPort = "38080"
+			logger.Println("WEBSERVER_PORT contains letters, using default of 8080")
+			WebPort = "8080"
 		}
 	} else {
-		WebPort = "38080"
+		WebPort = "8080"
 	}
 
 	// figure out user SDK path, containing sdk_config.ini
